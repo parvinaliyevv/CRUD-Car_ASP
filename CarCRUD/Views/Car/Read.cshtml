@@ -1,0 +1,32 @@
+﻿@model List<CarViewModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="~/css/table.css" />
+    <title>Cars</title>
+</head>
+<body>
+    <table class="content-table">
+
+        <thead>
+            <tr>
+                <th>Vin</th>
+                <th>Model</th>
+                <th>Vendor</th>
+            </tr>
+        </thead>
+
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>@item.Vin</td>
+                <td>@item.Vendor</td>
+                <td>@item.Model</td>
+            </tr>
+        }
+        
+    </table>
+</body>
+</html>
