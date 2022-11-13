@@ -38,6 +38,8 @@ public class CarController : Controller
     {
         int index = _cars.FindIndex(car => car.Vin == carViewModel.Vin);
 
+        if (index == -1) return View();
+
         _cars.RemoveAt(index);
         _cars.Insert(index, carViewModel);
 
@@ -47,8 +49,8 @@ public class CarController : Controller
     [HttpPost]
     public IActionResult Delete(string vinValue)
     {
-        _cars.RemoveAll(car => car.Vin == vinValue);
+        var count = _cars.RemoveAll(car => car.Vin == vinValue);
 
-        return RedirectToAction("Read");
+        return (count == 0) ? View() : RedirectToAction("Read");
     }
 }

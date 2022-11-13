@@ -1,8 +1,22 @@
 ﻿@model CarViewModel
 
-<form asp-controller="Car" asp-action="Update" method="post">
-	<input type="text" asp-for="Vin" required="required" placeholder="Vin"/>
-	<input type="text" asp-for="Vendor" required="required" placeholder="Vendor"/>
-	<input type="text" asp-for="Model" required="required" placeholder="Model"/>
-	<input type="submit" value="Update"/>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="~/css/site.css">
+	<title>Create</title>
+</head>
+
+<body>
+	<h1>Update Car</h1>
+	<form asp-controller="Car" asp-action="Update" method="post">
+		<input type="text" asp-for="Vin" required="required" placeholder="Vin" />
+		<input type="text" asp-for="Vendor" required="required" placeholder="Vendor" />
+		<input type="text" asp-for="Model" required="required" placeholder="Model" />
+		<input type="submit" value="Update" class="input-submit">
+	</form>
+</body>
+
+</html>

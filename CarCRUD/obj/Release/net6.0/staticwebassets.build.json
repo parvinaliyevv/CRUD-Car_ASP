@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "nDTbW7AaaxtI4HF6fcmKOLsEm3GpAvGxg/qBxXIT/a0=",
+  "Source": "CarCRUD",
+  "BasePath": "_content/CarCRUD",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CarCRUD\\wwwroot",
+      "Source": "CarCRUD",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\CarCRUD\\CarCRUD\\wwwroot\\",
+      "BasePath": "_content/CarCRUD",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\CarCRUD\\CarCRUD\\wwwroot\\css\\site.css",
+      "SourceId": "CarCRUD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\CarCRUD\\CarCRUD\\wwwroot\\",
+      "BasePath": "_content/CarCRUD",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\CarCRUD\\CarCRUD\\wwwroot\\css\\table.css",
+      "SourceId": "CarCRUD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\CarCRUD\\CarCRUD\\wwwroot\\",
+      "BasePath": "_content/CarCRUD",
+      "RelativePath": "css/table.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\table.css"
+    }
+  ]
+}

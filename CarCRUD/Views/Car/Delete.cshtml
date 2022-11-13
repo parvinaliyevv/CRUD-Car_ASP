@@ -1,4 +1,20 @@
-﻿<form asp-controller="Car" asp-action="Delete" method="post">
-	<input type="text" name="vinValue" required="required" placeholder="Vin"/>
-	<input type="submit" value="Delete"/>
-</form>
+﻿@model CarViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="~/css/site.css">
+	<title>Create</title>
+</head>
+
+<body>
+	<h1>Delete Car</h1>
+	<form asp-controller="Car" asp-action="Delete" method="post">
+		<input type="text" name="vinValue" required="required" placeholder="Vin" />
+		<input type="submit" value="Delete" class="input-submit">
+	</form>
+</body>
+
+</html>

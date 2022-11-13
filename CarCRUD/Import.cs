@@ -1,6 +1,4 @@
-﻿
-
-global using CarCRUD.Models;
+﻿global using CarCRUD.Models;
 
 global using Bogus;
 global using Bogus.DataSets;
