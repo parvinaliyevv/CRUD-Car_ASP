@@ -8,33 +8,33 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CarCRUD
 build_property.RootNamespace = CarCRUD
-build_property.ProjectDir = C:\Users\HP\source\repos\CarCRUD\CarCRUD\
+build_property.ProjectDir = C:\Users\Aliy_ql08\Desktop\New folder\CRUD-Car_ASP\CarCRUD\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\HP\source\repos\CarCRUD\CarCRUD
+build_property.MSBuildProjectDirectory = C:\Users\Aliy_ql08\Desktop\New folder\CRUD-Car_ASP\CarCRUD
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/HP/source/repos/CarCRUD/CarCRUD/Views/Car/Create.cshtml]
+[C:/Users/Aliy_ql08/Desktop/New folder/CRUD-Car_ASP/CarCRUD/Views/Car/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/CarCRUD/CarCRUD/Views/Car/Delete.cshtml]
+[C:/Users/Aliy_ql08/Desktop/New folder/CRUD-Car_ASP/CarCRUD/Views/Car/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/CarCRUD/CarCRUD/Views/Car/Home.cshtml]
+[C:/Users/Aliy_ql08/Desktop/New folder/CRUD-Car_ASP/CarCRUD/Views/Car/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/CarCRUD/CarCRUD/Views/Car/Read.cshtml]
+[C:/Users/Aliy_ql08/Desktop/New folder/CRUD-Car_ASP/CarCRUD/Views/Car/Read.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXFJlYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/CarCRUD/CarCRUD/Views/Car/Update.cshtml]
+[C:/Users/Aliy_ql08/Desktop/New folder/CRUD-Car_ASP/CarCRUD/Views/Car/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/CarCRUD/CarCRUD/Views/_ViewImports.cshtml]
+[C:/Users/Aliy_ql08/Desktop/New folder/CRUD-Car_ASP/CarCRUD/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
