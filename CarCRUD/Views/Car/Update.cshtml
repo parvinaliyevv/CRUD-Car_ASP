@@ -10,11 +10,22 @@
 </head>
 
 <body>
+
+	<a style="display: inline;" asp-controller="Car" asp-action="Home">Home</a>
+
 	<h1>Update Car</h1>
 	<form asp-controller="Car" asp-action="Update" method="post">
-		<input type="text" asp-for="Vin" required="required" placeholder="Vin" />
-		<input type="text" asp-for="Vendor" required="required" placeholder="Vendor" />
-		<input type="text" asp-for="Model" required="required" placeholder="Model" />
+		<label class="select" for="slct">
+			<select id="slct" asp-for="Vin" asp-items="@ViewBag.Cars"></select>
+			<svg><use xlink:href="#select-arrow-down"></use> </svg>
+		</label>
+		<svg class="sprites">
+			<symbol id="select-arrow-down" viewbox="0 0 10 6">
+				<polyline points="1 1 5 5 9 1"></polyline>
+			</symbol>
+		</svg>
+		<input type="text" asp-for="Vendor" placeholder="Vendor" />
+		<input type="text" asp-for="Model" placeholder="Model" />
 		<input type="submit" value="Update" class="input-submit">
 	</form>
 </body>

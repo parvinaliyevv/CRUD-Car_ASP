@@ -1,6 +1,4 @@
-﻿@model CarViewModel
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,9 +8,18 @@
 </head>
 
 <body>
+	<a style="display: inline;" asp-controller="Car" asp-action="Home">Home</a>
 	<h1>Delete Car</h1>
 	<form asp-controller="Car" asp-action="Delete" method="post">
-		<input type="text" name="vinValue" required="required" placeholder="Vin" />
+		<label class="select" for="slct">
+          <select id="slct" name="vinValue" asp-items="@ViewBag.Cars"></select>
+		  <svg><use xlink:href="#select-arrow-down"></use> </svg>
+        </label>
+        <svg class="sprites">
+          <symbol id="select-arrow-down" viewbox="0 0 10 6">
+            <polyline points="1 1 5 5 9 1"></polyline>
+          </symbol>
+        </svg>
 		<input type="submit" value="Delete" class="input-submit">
 	</form>
 </body>

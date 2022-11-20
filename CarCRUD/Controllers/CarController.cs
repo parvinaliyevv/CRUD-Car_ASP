@@ -20,9 +20,37 @@ public class CarController : Controller
 
     public IActionResult Read() => View(_cars);
 
-    public IActionResult Update() => View();
+    public IActionResult Update()
+    {
+        var items = new List<SelectListItem>();
 
-    public IActionResult Delete() => View();
+        foreach (var item in _cars)
+        {
+            var selectItem = new SelectListItem(item.ToString(), item.Vin);
+
+            items.Add(selectItem);
+        }
+
+        ViewBag.Cars = items;
+
+        return View();
+    }
+
+    public IActionResult Delete()
+    {
+        var items = new List<SelectListItem>();
+
+        foreach (var item in _cars)
+        {
+            var selectItem = new SelectListItem(item.ToString(), item.Vin);
+
+            items.Add(selectItem);
+        }
+
+        ViewBag.Cars = items;
+
+        return View();
+    }
 
 
     [HttpPost]
@@ -39,6 +67,11 @@ public class CarController : Controller
         int index = _cars.FindIndex(car => car.Vin == carViewModel.Vin);
 
         if (index == -1) return View();
+
+        var car = _cars.FirstOrDefault(car => car.Vin == carViewModel.Vin);
+
+        if (carViewModel.Vendor is null) carViewModel.Vendor = car.Vendor;
+        if (carViewModel.Model is null) carViewModel.Model = car.Model;
 
         _cars.RemoveAt(index);
         _cars.Insert(index, carViewModel);
