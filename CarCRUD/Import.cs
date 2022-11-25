@@ -1,4 +1,6 @@
-﻿global using CarCRUD.Data;
+﻿global using System.ComponentModel.DataAnnotations;
+
+global using CarCRUD.Data;
 global using CarCRUD.Models;
 global using CarCRUD.Services;
 global using CarCRUD.ViewModels;

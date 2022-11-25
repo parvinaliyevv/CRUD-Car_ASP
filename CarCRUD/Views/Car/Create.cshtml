@@ -15,7 +15,9 @@
 	<form asp-controller="Car" asp-action="Create" method="post">
 		<input type="text" asp-for="Vin" readonly />
 		<input type="text" asp-for="Vendor" required="required" placeholder="Vendor" />
+		<span asp-validation-for="Vendor" style="color: red;"></span>
 		<input type="text" asp-for="Model" required="required" placeholder="Model" />
+		<span asp-validation-for="Model" style="color: red;"></span>
 		<input type="submit" value="Create" class="input-submit">
 	</form>
 </body>

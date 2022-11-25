@@ -71,6 +71,8 @@ public class CarController : Controller
     [HttpPost]
     public IActionResult Create(CarViewModel carViewModel)
     {
+        if (!ModelState.IsValid) return View();
+
         var car = TypeConverter.Convert<Car, CarViewModel>(carViewModel);
 
         _dbContext.Cars.Add(car);
@@ -80,9 +82,9 @@ public class CarController : Controller
     }
 
     [HttpPost]
-    public IActionResult Update(CarViewModel carViewModel)
+    public IActionResult Update(UpdateCarViewModel carViewModel)
     {
-        var updatedCar = TypeConverter.Convert<Car, CarViewModel>(carViewModel);
+        var updatedCar = TypeConverter.Convert<Car, UpdateCarViewModel>(carViewModel);
 
         var cars = _dbContext.Cars.ToList();
 
