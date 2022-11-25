@@ -2,15 +2,23 @@
 
 public class CarController : Controller
 {
-    private static List<CarViewModel> _cars;
+    private AppDbContext _dbContext;
 
 
-    static CarController()
+    public CarController(AppDbContext dbContext)
     {
-        _cars = new Faker<CarViewModel>()
-            .RuleFor("Model", (faker) => faker.Vehicle.Model())
-            .RuleFor("Vendor", (faker) => faker.Vehicle.Manufacturer())
-            .Generate(7);
+        _dbContext = dbContext;
+
+        if (dbContext.Cars.Count() == 0)
+        {
+            dbContext.Cars.AddRange(new Faker<Car>()
+            .RuleFor("Vin", faker => faker.Vehicle.Vin())
+            .RuleFor("Model", faker => faker.Vehicle.Model())
+            .RuleFor("Vendor", faker => faker.Vehicle.Manufacturer())
+            .Generate(7));
+
+            dbContext.SaveChanges();
+        }
     }
 
 
@@ -18,13 +26,19 @@ public class CarController : Controller
 
     public IActionResult Create() => View(new CarViewModel());
 
-    public IActionResult Read() => View(_cars);
+    public IActionResult Read()
+    {
+        var cars = _dbContext.Cars.Select(car => TypeConverter.Convert<CarViewModel, Car>(car)).ToList();
+
+        return View(cars);
+    }
 
     public IActionResult Update()
     {
         var items = new List<SelectListItem>();
+        var cars = _dbContext.Cars.Select(car => TypeConverter.Convert<CarViewModel, Car>(car)).ToList();
 
-        foreach (var item in _cars)
+        foreach (var item in cars)
         {
             var selectItem = new SelectListItem(item.ToString(), item.Vin);
 
@@ -39,8 +53,9 @@ public class CarController : Controller
     public IActionResult Delete()
     {
         var items = new List<SelectListItem>();
+        var cars = _dbContext.Cars.Select(car => TypeConverter.Convert<CarViewModel, Car>(car)).ToList();
 
-        foreach (var item in _cars)
+        foreach (var item in cars)
         {
             var selectItem = new SelectListItem(item.ToString(), item.Vin);
 
@@ -56,7 +71,10 @@ public class CarController : Controller
     [HttpPost]
     public IActionResult Create(CarViewModel carViewModel)
     {
-        _cars.Add(carViewModel);
+        var car = TypeConverter.Convert<Car, CarViewModel>(carViewModel);
+
+        _dbContext.Cars.Add(car);
+        _dbContext.SaveChanges();
 
         return RedirectToAction("Read");
     }
@@ -64,17 +82,21 @@ public class CarController : Controller
     [HttpPost]
     public IActionResult Update(CarViewModel carViewModel)
     {
-        int index = _cars.FindIndex(car => car.Vin == carViewModel.Vin);
+        var updatedCar = TypeConverter.Convert<Car, CarViewModel>(carViewModel);
 
-        if (index == -1) return View();
+        var cars = _dbContext.Cars.ToList();
 
-        var car = _cars.FirstOrDefault(car => car.Vin == carViewModel.Vin);
+        var car = cars.Find(car => car.Vin == updatedCar.Vin);
 
-        if (carViewModel.Vendor is null) carViewModel.Vendor = car.Vendor;
-        if (carViewModel.Model is null) carViewModel.Model = car.Model;
+        if (car is null) return View();
 
-        _cars.RemoveAt(index);
-        _cars.Insert(index, carViewModel);
+        if (updatedCar.Vendor is null) updatedCar.Vendor = car.Vendor;
+        if (updatedCar.Model is null) updatedCar.Model = car.Model;
+
+        _dbContext.Remove(car);
+        _dbContext.Add(updatedCar);
+
+        _dbContext.SaveChanges();
 
         return RedirectToAction("Read");
     }
@@ -82,8 +104,14 @@ public class CarController : Controller
     [HttpPost]
     public IActionResult Delete(string vinValue)
     {
-        var count = _cars.RemoveAll(car => car.Vin == vinValue);
+        var cars = _dbContext.Cars.ToList();
+        var car = cars.Find(car => car.Vin == vinValue);
 
-        return (count == 0) ? View() : RedirectToAction("Read");
+        if (car is null) return View();
+
+        _dbContext.Cars.Remove(car);
+        _dbContext.SaveChanges();
+
+        return RedirectToAction("Read");
     }
 }

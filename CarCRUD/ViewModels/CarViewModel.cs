@@ -1,4 +1,4 @@
-﻿namespace CarCRUD.Models;
+﻿namespace CarCRUD.ViewModels;
 
 public class CarViewModel
 {

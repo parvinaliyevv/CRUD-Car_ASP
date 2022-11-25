@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\New folder\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj": {}
+    "C:\\Users\\HP\\Desktop\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\New folder\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj": {
+    "C:\\Users\\HP\\Desktop\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\New folder\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj",
         "projectName": "CarCRUD",
-        "projectPath": "C:\\Users\\HP\\Desktop\\New folder\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\CRUD-Car_ASP\\CarCRUD\\CarCRUD.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\New folder\\CRUD-Car_ASP\\CarCRUD\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\CRUD-Car_ASP\\CarCRUD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -47,6 +47,20 @@
             "Bogus": {
               "target": "Package",
               "version": "[34.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
