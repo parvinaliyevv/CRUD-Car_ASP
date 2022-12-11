@@ -10,13 +10,12 @@
 </head>
 
 <body>
-
 	<a style="display: inline;" asp-controller="Car" asp-action="Home">Home</a>
 
 	<h1>Update Car</h1>
 	<form asp-controller="Car" asp-action="Update" method="post">
 		<label class="select" for="slct">
-			<select id="slct" asp-for="Vin" asp-items="@ViewBag.Cars"></select>
+			<select id="slct" onchange="fill()" asp-for="Vin" asp-items="@ViewBag.Cars"></select>
 			<svg><use xlink:href="#select-arrow-down"></use> </svg>
 		</label>
 		<svg class="sprites">
@@ -24,10 +23,20 @@
 				<polyline points="1 1 5 5 9 1"></polyline>
 			</symbol>
 		</svg>
-		<input type="text" asp-for="Vendor" placeholder="Vendor" />
-		<input type="text" asp-for="Model" placeholder="Model" />
+		<input id="vendorText" type="text" asp-for="Vendor" placeholder="Vendor" />
+		<input id="modelText" type="text" asp-for="Model" placeholder="Model" />
 		<input type="submit" value="Update" class="input-submit">
 	</form>
+
+	<script>
+		fill();
+
+		function fill() {
+			let values = slct.options[slct.selectedIndex].text.split(':')[1].toString().split('-');
+			vendorText.value = values[0].toString().trim();
+			modelText.value = values[1].toString().trim();
+		}
+	</script>
 </body>
 
 </html>

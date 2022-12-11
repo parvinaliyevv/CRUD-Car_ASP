@@ -92,9 +92,6 @@ public class CarController : Controller
 
         if (car is null) return View();
 
-        if (updatedCar.Vendor is null) updatedCar.Vendor = car.Vendor;
-        if (updatedCar.Model is null) updatedCar.Model = car.Model;
-
         _dbContext.Remove(car);
         _dbContext.Add(updatedCar);
 
